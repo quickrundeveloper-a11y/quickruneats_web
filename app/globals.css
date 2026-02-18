@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-lexend);
+  --font-mono: var(--font-lexend);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +20,75 @@
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: none;
+  background-repeat: unset;
+  background-size: unset;
+  background-attachment: unset;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px) scale(0.96);
+  filter: blur(6px);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), opacity 700ms ease, filter 700ms ease;
+  will-change: transform, opacity, filter;
+}
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+@keyframes spin360 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rock {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+.spin-on-reveal {
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.reveal.show .spin-on-reveal {
+  animation: spin360 14s linear infinite;
+}
+
+.rock-on-reveal {
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.reveal.show .rock-on-reveal {
+  animation: rock 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.show {
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+  .reveal.show .spin-on-reveal {
+    animation: none !important;
+  }
+  .reveal.show .rock-on-reveal {
+    animation: none !important;
+  }
 }

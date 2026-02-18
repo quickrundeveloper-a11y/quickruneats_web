@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="140" viewBox="0 0 360 140">
+  <defs>
+    <filter id="s" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".12"/>
+    </filter>
+    <radialGradient id="g" cx="50%" cy="50%" r="70%">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f6f6f6"/>
+    </radialGradient>
+  </defs>
+  <rect width="360" height="140" fill="none"/>
+  <g transform="translate(0,10)" filter="url(#s)">
+    <ellipse cx="70" cy="70" rx="54" ry="30" fill="#34d399" opacity="0.9"/>
+    <ellipse cx="115" cy="60" rx="46" ry="26" fill="#22c55e" opacity="0.85" transform="rotate(-10 115 60)"/>
+    <ellipse cx="90" cy="95" rx="42" ry="24" fill="#16a34a" opacity="0.8" transform="rotate(8 90 95)"/>
+    <circle cx="165" cy="82" r="24" fill="#fbe8c8"/>
+    <circle cx="188" cy="94" r="18" fill="#fde9c9" stroke="#f2d6ae" stroke-width="6"/>
+  </g>
+  <g fill="#8c6239" opacity=".7">
+    <circle cx="145" cy="112" r="3"/>
+    <circle cx="160" cy="118" r="2.5"/>
+    <circle cx="150" cy="124" r="2"/>
+  </g>
+</svg>
