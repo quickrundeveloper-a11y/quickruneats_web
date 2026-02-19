@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 w-full bg-zinc-50/80 backdrop-blur">
+    <header className="sticky top-0 z-40 w-full bg-white/80 backdrop-blur">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6 lg:px-12">
         <Link href="/" className="text-2xl font-extrabold tracking-tight text-zinc-900">
           QuickRunEats

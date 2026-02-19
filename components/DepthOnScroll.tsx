@@ -7,6 +7,7 @@ type Props = {
   maxScale?: number; // subtle zoom toward center (0..~0.2)
   side?: "left" | "right"; // which side to move inward from
   translatePx?: number; // max horizontal shift toward center
+  motion?: "pull" | "inout";
 };
 
 export default function DepthOnScroll({
@@ -15,6 +16,7 @@ export default function DepthOnScroll({
   maxScale = 0.06,
   side = "left",
   translatePx = 16,
+  motion = "pull",
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number | null>(null);
@@ -33,7 +35,8 @@ export default function DepthOnScroll({
       const norm = Math.max(-1, Math.min(1, (center - vh / 2) / (vh / 2))); // -1..1
       const s = 1 + maxScale * (1 - Math.abs(norm));
       const dir = side === "left" ? 1 : -1;
-      const tx = dir * translatePx * (1 - Math.abs(norm));
+      const base = motion === "inout" ? norm : 1 - Math.abs(norm);
+      const tx = dir * translatePx * base;
       el.style.transform = `translateX(${tx.toFixed(2)}px) scale(${s.toFixed(3)})`;
     };
 
@@ -53,7 +56,7 @@ export default function DepthOnScroll({
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, [maxScale, side, translatePx]);
+  }, [maxScale, side, translatePx, motion]);
 
   return (
     <div ref={ref} className={className}>

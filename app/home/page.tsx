@@ -7,8 +7,8 @@ import DepthOnScroll from "../../components/DepthOnScroll";
 
 export default function Home() {
   return (
-    <>
-    <section className="relative isolate min-h-[90vh] w-full overflow-hidden bg-zinc-50">
+    <div className="home-page-bg">
+    <section className="relative isolate min-h-[90vh] w-full overflow-hidden bg-transparent">
       <div className="absolute inset-x-0 top-0 z-20 flex items-start justify-between p-4">
         <div className="relative h-20 w-64">
           <div className="absolute left-0 top-1 h-4 w-20 -rotate-20 rounded-full bg-amber-700 shadow-md" />
@@ -57,7 +57,7 @@ export default function Home() {
               }}
             >
               <Image
-                src="/p1.png"
+                src="/p123.webp"
                 alt="Hero dish"
                 fill
                 sizes="(max-width: 768px) 80vw, 520px"
@@ -68,23 +68,18 @@ export default function Home() {
           </SpinOnScroll>
           <div className="absolute inset-0">
           </div>
-          <div className="absolute left-[18%] top-[20%] h-[6px] w-[75%] -rotate-[20deg] rounded-full bg-amber-700 shadow-md" />
-          <div className="absolute left-[20%] top-[26%] h-[6px] w-[75%] -rotate-[20deg] rounded-full bg-amber-600 shadow-md" />
         </div>
       </div>
 
     </section>
     
-    <section id="explore" className="relative w-full bg-zinc-50 py-16 sm:py-24">
-      <DepthOnScroll className="pointer-events-none absolute left-0 top-8 md:top-6 h-28 w-40 md:h-36 md:w-56" side="left" maxScale={0.1} translatePx={28}>
+    <section id="explore" className="relative w-full bg-transparent py-16 sm:py-24">
+      <DepthOnScroll className="pointer-events-none absolute left-0 top-8 md:top-6 h-28 w-40 md:h-36 md:w-56" side="left" maxScale={0.1} translatePx={28} motion="inout">
         <Image src="/p3.jpg" alt="" fill className="object-cover object-left" priority />
       </DepthOnScroll>
       <DepthOnScroll className="pointer-events-none absolute right-0 top-8 md:top-15 h-28 w-40 md:h-36 md:w-56" side="right" maxScale={0.1} translatePx={28}>
-        <Image src="/p3.jpg" alt="" fill className="object-cover object-right" priority />
+        <Image src="/p15.png" alt="" fill className="object-cover object-right" priority />
       </DepthOnScroll>
-      <div className="pointer-events-none absolute left-5 bottom-0 z-10 h-24 w-24 md:h-28 md:w-28">
-        <Image src="/p6.jpg" alt="" fill className="object-cover rounded-full" priority />
-      </div>
       <div className="mx-auto w-full max-w-6xl px-6 lg:px-12">
         <div className="text-center">
           <h3 className="text-4xl font-extrabold tracking-tight text-zinc-900">What&apos;s on our Plate</h3>
@@ -101,9 +96,9 @@ export default function Home() {
 
         <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <ScrollReveal delayMs={0}>
-            <SpinOnScroll className="relative mx-auto aspect-square w-72 overflow-hidden rounded-full" maxDegrees={18}>
+            <SpinOnScroll className="relative mx-auto aspect-square w-72 overflow-hidden rounded-full" maxDegrees={8}>
               <Image
-                src="/p1.png"
+                src="/p123.webp"
                 alt="Dish 1"
                 fill
                 sizes="(max-width: 768px) 288px, 288px"
@@ -120,24 +115,27 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal delayMs={120}>
             <div className="flex flex-col items-center">
-              <SpinOnScroll className="relative mx-auto aspect-square w-72 overflow-hidden rounded-full" maxDegrees={18}>
-                <Image
-                  src="/p1.png"
-                  alt="Main dish"
-                  fill
-                  sizes="(max-width: 768px) 288px, 288px"
-                  className="object-cover p-0"
-                  priority
-                />
-
-                <div className="mt-4 max-w-[18rem] text-center">
-                <h4 className="text-lg font-semibold text-zinc-900">Stirred Egg</h4>
-                <p className="mt-1 text-sm leading-5 text-zinc-600">
-                  This might be the most common Chinese family dish. Easy to cook and comforting.
-                </p>
-              </div>
-
-
+              <SpinOnScroll className="relative mx-auto aspect-square w-72 overflow-visible" maxDegrees={8}>
+                <div className="relative h-full w-full overflow-hidden rounded-full">
+                  <Image
+                    src="/p1234.png"
+                    alt="Main dish"
+                    fill
+                    sizes="(max-width: 768px) 288px, 288px"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                  <div className="relative h-70 w-70">
+                    <div className="absolute inset-0">
+                      <Image src="/p222.png" alt="Chopstick" fill className="object-contain -rotate-8" />
+                    </div>
+                    <div className="absolute inset-0">
+                      <Image src="/p222.png" alt="Chopstick" fill className="object-contain -rotate-2" />
+                    </div>
+                  </div>
+                </div>
               </SpinOnScroll>
               <div className="mt-4 w-72 mx-auto text-center">
                 <h4 className="text-lg font-semibold text-zinc-900">Stirred Egg</h4>
@@ -148,9 +146,9 @@ export default function Home() {
             </div>
           </ScrollReveal>
           <ScrollReveal delayMs={240}>
-            <SpinOnScroll className="relative mx-auto aspect-square w-72 overflow-hidden rounded-full" maxDegrees={18}>
+            <SpinOnScroll className="relative mx-auto aspect-square w-72 overflow-hidden rounded-full" maxDegrees={8}>
               <Image
-                src="/p1.png"
+                src="/p321.png"
                 alt="Dish 3"
                 fill
                 sizes="(max-width: 768px) 288px, 288px"
@@ -158,22 +156,22 @@ export default function Home() {
               />
             </SpinOnScroll>
             <div className="mt-4 w-72 mx-auto text-center">
-                <h4 className="text-lg font-semibold text-zinc-900">Stirred Egg</h4>
-                <p className="mt-1 text-sm leading-5 text-zinc-600">
-                  This might be the most common Chinese family dish. Easy to cook and comforting.
-                </p>
-              </div>
+              <h4 className="text-lg font-semibold text-zinc-900">Stirred Egg</h4>
+              <p className="mt-1 text-sm leading-5 text-zinc-600">
+                This might be the most common Chinese family dish. Easy to cook and comforting.
+              </p>
+            </div>
           </ScrollReveal>
         </div>
       </div>
     </section>
 
-    <section id="testimonials" className="relative w-full bg-zinc-50 py-20">
+    <section id="testimonials" className="relative w-full bg-transparent py-20">
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-[1.1fr_1fr] lg:px-12">
         <div className="relative mx-auto aspect-square w-[88%] max-w-[540px]">
           <SpinOnScroll className="absolute inset-0" maxDegrees={16}>
             <Image
-              src="/p1.png"
+              src="/p123.webp"
               alt="Featured dish"
               fill
               sizes="(max-width: 1024px) 80vw, 540px"
@@ -181,8 +179,6 @@ export default function Home() {
               priority
             />
           </SpinOnScroll>
-          <div className="absolute left-[16%] top-[14%] h-[10px] w-[68%] -rotate-[15deg] rounded-full bg-amber-800 shadow-md" />
-          <div className="absolute left-[18%] top-[19%] h-[10px] w-[68%] -rotate-[15deg] rounded-full bg-amber-700 shadow-md" />
         </div>
         <div className="relative">
           <h3 className="text-4xl font-extrabold tracking-tight text-zinc-900">Let&apos;s see what other says</h3>
@@ -195,9 +191,15 @@ export default function Home() {
             <span className="ml-2 text-3xl text-zinc-400">”</span>
           </p>
           <div className="mt-8 flex items-center gap-6">
-            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-amber-300 to-orange-500 shadow ring-4 ring-white" />
-            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-emerald-300 to-teal-500 shadow ring-4 ring-white" />
-            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-sky-300 to-indigo-500 shadow ring-4 ring-white" />
+            <div className="relative h-12 w-12 overflow-hidden rounded-full ring-4 ring-white shadow-lg">
+              <Image src="/p2.jpg" alt="" fill className="object-cover" />
+            </div>
+            <div className="relative h-12 w-12 overflow-hidden rounded-full ring-4 ring-white shadow-lg">
+              <Image src="/p4.jpg" alt="" fill className="object-cover" />
+            </div>
+            <div className="relative h-12 w-12 overflow-hidden rounded-full ring-4 ring-white shadow-lg">
+              <Image src="/p3.jpg" alt="" fill className="object-cover" />
+            </div>
           </div>
         </div>
       </div>
@@ -212,8 +214,8 @@ export default function Home() {
       </div>
       <div className="mt-12 w-full">
         <div className="relative h-24 w-full overflow-hidden rounded-3xl border-t border-zinc-100 bg-gradient-to-b from-white to-zinc-50 shadow-[0_-6px_24px_rgba(0,0,0,0.06)]">
-          <DepthOnScroll className="pointer-events-none absolute inset-y-0 left-0 w-[420px]" side="left" translatePx={28} maxScale={0.1}>
-            <Image src="/p6.jpg" alt="" fill className="object-contain object-left" priority />
+          <DepthOnScroll className="pointer-events-none absolute inset-y-0 left-0 w-[420px]" side="left" translatePx={28} maxScale={0.1} motion="inout">
+            <Image src="/p8.jpg" alt="" fill className="object-contain object-left" priority />
           </DepthOnScroll>
           <DepthOnScroll className="pointer-events-none absolute inset-y-0 right-0 w-[420px]" side="right" translatePx={28} maxScale={0.1}>
             <Image src="/p3.jpg" alt="" fill className="object-contain object-right" priority />
@@ -221,16 +223,16 @@ export default function Home() {
         </div>
       </div>
     </section>
-    
-    <section id="subscribe" className="relative w-full bg-zinc-50 py-20">
-      <DepthOnScroll className="pointer-events-none absolute left-0 top-4 h-24 w-40 md:h-32 md:w-48" side="left" translatePx={16} maxScale={0.08}>
-        <Image src="/p5.jpg" alt="" fill className="object-contain object-left" priority />
+
+    <section id="subscribe" className="relative w-full bg-transparent py-20">
+      <DepthOnScroll className="pointer-events-none absolute left-0 top-4 h-24 w-40 md:h-32 md:w-48" side="left" translatePx={16} maxScale={0.08} motion="inout">
+        <Image src="/p15.png" alt="" fill className="object-contain object-left" priority />
       </DepthOnScroll>
       <DepthOnScroll className="pointer-events-none absolute right-2 top-8 h-24 w-40 md:h-32 md:w-48" side="right" translatePx={16} maxScale={0.08}>
         <Image src="/p4.jpg" alt="" fill className="object-contain object-right" priority />
       </DepthOnScroll>
-      <DepthOnScroll className="pointer-events-none absolute left-6 bottom-6 h-20 w-20 md:h-24 md:w-24" side="left" translatePx={10} maxScale={0.06}>
-        <Image src="/p6.jpg" alt="" fill className="object-contain" priority />
+      <DepthOnScroll className="pointer-events-none absolute left-6 bottom-6 h-20 w-20 md:h-24 md:w-24" side="left" translatePx={10} maxScale={0.06} motion="inout">
+        <Image src="/p8.jpg" alt="" fill className="object-contain" priority />
       </DepthOnScroll>
       <DepthOnScroll className="pointer-events-none absolute right-10 bottom-8 h-16 w-24 md:h-20 md:w-32" side="right" translatePx={10} maxScale={0.06}>
         <Image src="/p3.jpg" alt="" fill className="object-contain" priority />
@@ -255,7 +257,8 @@ export default function Home() {
     </section>
 
     
+
     <Footer />
-    </>
+    </div>
   );
 }
