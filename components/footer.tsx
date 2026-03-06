@@ -2,45 +2,41 @@ import Link from "next/link";
 import Image from "next/image";
 
 const getCooking = [
-  { label: "Easy Asian Takeout", href: "#" },
-  { label: "Recipe Gallery", href: "#" },
-  { label: "Ingredients Guide", href: "#" },
-  { label: "Weekly Meal Plans", href: "#" },
-  { label: "Penang Tour", href: "#" },
-  { label: "Conversion Tool", href: "#" },
-];
-
-const information = [
-  { label: "About", href: "#" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Contact", href: "#" },
+  { label: "Easy Asian Takeout", href: "/home#explore" },
+  { label: "Recipe Gallery", href: "/home#testimonials" },
+  { label: "Ingredients Guide", href: "/about" },
+  { label: "Weekly Meal Plans", href: "/home#subscribe" },
+  { label: "Penang Tour", href: "/about" },
+  { label: "Conversion Tool", href: "/about" },
 ];
 
 const followUs = [
-  { label: "Facebook", href: "#" },
-  { label: "Instagram", href: "#" },
-  { label: "Pinterest", href: "#" },
-  { label: "Youtube", href: "#" },
-  { label: "Twitter", href: "#" },
+  { label: "Facebook", href: "https://facebook.com" },
+  { label: "Instagram", href: "https://instagram.com" },
+  { label: "Pinterest", href: "https://pinterest.com" },
+  { label: "Youtube", href: "https://youtube.com" },
+  { label: "Twitter", href: "https://twitter.com" },
 ];
 
 const helpSupport = [
-  { label: "Help Center", href: "#" },
-  { label: "FAQs", href: "#" },
-  { label: "Order Support", href: "#" },
-  { label: "Report an Issue", href: "#" },
+  { label: "About", href: "/about" },
+  { label: "Help Center", href: "/help-center" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Blog", href: "/about" },
+  { label: "FAQs", href: "/help-center" },
+  { label: "Order Support", href: "/help-center" },
 ];
 
 const deliveryPartners = [
-  { label: "Partner With Us", href: "#" },
-  { label: "Apps For You", href: "#" },
+  { label: "Partner With Us", href: "/about" },
+  { label: "Apps For You", href: "/about" },
 ];
 
 export default function Footer() {
   return (
     <footer className="relative w-full bg-white pt-16 pb-12">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-12">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-5">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-4">
           <div>
             <h4 className="text-lg font-extrabold tracking-tight text-zinc-900">
               Get Cooking
@@ -61,42 +57,25 @@ export default function Footer() {
 
           <div>
             <h4 className="text-lg font-extrabold tracking-tight text-zinc-900">
-              Information
+              Learn More
             </h4>
             <ul className="mt-4 space-y-3">
-              {information.map((item) => {
+              {helpSupport.map((item) => {
                 const isPrivacy = item.label === "Privacy Policy";
+                const isExternal = item.href.startsWith("http");
                 return (
                   <li key={item.label}>
                     <Link
                       href={item.href}
                       className="text-zinc-600 transition hover:text-zinc-900"
-                      target={isPrivacy ? "_blank" : undefined}
-                      rel={isPrivacy ? "noopener noreferrer" : undefined}
+                      target={isPrivacy || isExternal ? "_blank" : undefined}
+                      rel={isPrivacy || isExternal ? "noopener noreferrer" : undefined}
                     >
                       {item.label}
                     </Link>
                   </li>
                 );
               })}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-extrabold tracking-tight text-zinc-900">
-              Help &amp; Support
-            </h4>
-            <ul className="mt-4 space-y-3">
-              {helpSupport.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-zinc-600 transition hover:text-zinc-900"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
             </ul>
           </div>
 
@@ -123,16 +102,21 @@ export default function Footer() {
               Follow Us
             </h4>
             <ul className="mt-4 space-y-3">
-              {followUs.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-zinc-600 transition hover:text-zinc-900"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              {followUs.map((item) => {
+                const isExternal = item.href.startsWith("http");
+                return (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="text-zinc-600 transition hover:text-zinc-900"
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

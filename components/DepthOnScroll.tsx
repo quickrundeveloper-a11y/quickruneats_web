@@ -5,8 +5,13 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   maxScale?: number; // subtle zoom toward center (0..~0.2)
-  side?: "left" | "right"; // which side to move inward from
-  translatePx?: number; // max horizontal shift toward center
+  side?: "left" | "right" | "top" | "bottom"; // which side to move inward from
+  translatePx?: number; // max shift toward center
+  axis?: "x" | "y"; // movement axis
+  mode?: "linear" | "circle"; // movement path
+  radiusPx?: number; // circle radius (when mode=circle)
+  phaseDeg?: number; // phase offset for circle path
+  reverse?: boolean; // reverse direction
   motion?: "pull" | "inout";
 };
 
@@ -16,6 +21,11 @@ export default function DepthOnScroll({
   maxScale = 0.06,
   side = "left",
   translatePx = 16,
+  axis = "x",
+  mode = "linear",
+  radiusPx,
+  phaseDeg = 0,
+  reverse = false,
   motion = "pull",
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
@@ -34,10 +44,23 @@ export default function DepthOnScroll({
       const center = rect.top + rect.height / 2;
       const norm = Math.max(-1, Math.min(1, (center - vh / 2) / (vh / 2))); // -1..1
       const s = 1 + maxScale * (1 - Math.abs(norm));
-      const dir = side === "left" ? 1 : -1;
       const base = motion === "inout" ? norm : 1 - Math.abs(norm);
-      const tx = dir * translatePx * base;
-      el.style.transform = `translateX(${tx.toFixed(2)}px) scale(${s.toFixed(3)})`;
+      if (mode === "circle") {
+        const r = radiusPx ?? translatePx;
+        const sign = reverse ? -1 : 1;
+        const angle = sign * norm * Math.PI + (phaseDeg * Math.PI) / 180;
+        const tx = r * Math.cos(angle);
+        const ty = r * Math.sin(angle);
+        el.style.transform = `translate(${tx.toFixed(2)}px, ${ty.toFixed(2)}px) scale(${s.toFixed(3)})`;
+      } else if (axis === "y") {
+        const dirY = side === "top" ? 1 : side === "bottom" ? -1 : 1;
+        const ty = dirY * translatePx * base;
+        el.style.transform = `translateY(${ty.toFixed(2)}px) scale(${s.toFixed(3)})`;
+      } else {
+        const dirX = side === "left" ? 1 : -1;
+        const tx = dirX * translatePx * base;
+        el.style.transform = `translateX(${tx.toFixed(2)}px) scale(${s.toFixed(3)})`;
+      }
     };
 
     const onScroll = () => {
@@ -56,7 +79,7 @@ export default function DepthOnScroll({
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, [maxScale, side, translatePx, motion]);
+  }, [maxScale, side, translatePx, motion, axis, mode, radiusPx, phaseDeg, reverse]);
 
   return (
     <div ref={ref} className={className}>

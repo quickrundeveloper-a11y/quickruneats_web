@@ -9,17 +9,7 @@ export default function Home() {
   return (
     <div className="home-page-bg">
     <section className="relative isolate min-h-[90vh] w-full overflow-hidden bg-transparent">
-      <div className="absolute inset-x-0 top-0 z-20 flex items-start justify-between p-4">
-        <div className="relative h-20 w-64">
-          <div className="absolute left-0 top-1 h-4 w-20 -rotate-20 rounded-full bg-amber-700 shadow-md" />
-          <div className="absolute left-6 top-4 h-4 w-20 -rotate-20 rounded-full bg-amber-700 shadow-md" />
-          <div className="absolute left-12 top-7 h-4 w-20 -rotate-20 rounded-full bg-amber-700 shadow-md" />
-          <div className="absolute left-24 top-2 h-2 w-2 rounded-full bg-orange-600" />
-          <div className="absolute left-10 top-10 h-1.5 w-1.5 rounded-full bg-red-500" />
-          <div className="absolute left-16 top-6 h-1.5 w-1.5 rounded-full bg-black/60" />
-        </div>
-        
-      </div>
+      
       <div className="pointer-events-none absolute -left-40 -top-40 h-80 w-80 rounded-full bg-orange-200/50 blur-3xl" />
       <div className="mx-auto grid min-h-[90vh] w-full max-w-7xl grid-cols-1 items-center justify-items-center gap-12 px-6 py-16 sm:py-24 md:grid-cols-2 lg:px-12">
         <div className="flex flex-col items-center gap-6 text-center">
@@ -46,28 +36,16 @@ export default function Home() {
         </div>
 
         <div className="relative mx-auto aspect-square w-[90%] max-w-[520px]">
-          <SpinOnScroll className="absolute inset-0" maxDegrees={18}>
-            <div
-              className="absolute inset-0 overflow-hidden rounded-full"
-              style={{
-                WebkitMaskImage:
-                  "radial-gradient(circle at center, black 64%, transparent 70%)",
-                maskImage:
-                  "radial-gradient(circle at center, black 64%, transparent 70%)",
-              }}
-            >
-              <Image
-                src="/p123.webp"
-                alt="Hero dish"
-                fill
-                sizes="(max-width: 768px) 80vw, 520px"
-                className="object-cover"
-                priority
-              />
-            </div>
+          <SpinOnScroll className="absolute inset-0" maxDegrees={24}>
+            <Image
+              src="/h1.png"
+              alt="Hero dish"
+              fill
+              sizes="(max-width: 768px) 80vw, 520px"
+              className="object-contain"
+              priority
+            />
           </SpinOnScroll>
-          <div className="absolute inset-0">
-          </div>
         </div>
       </div>
 
@@ -96,17 +74,17 @@ export default function Home() {
 
         <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <ScrollReveal delayMs={0}>
-            <SpinOnScroll className="relative mx-auto aspect-square w-72 overflow-hidden rounded-full" maxDegrees={8}>
+            <SpinOnScroll className="relative mx-auto aspect-square w-80 overflow-hidden rounded-full" maxDegrees={12}>
               <Image
-                src="/p123.webp"
+                src="/h12.png"
                 alt="Dish 1"
                 fill
-                sizes="(max-width: 768px) 288px, 288px"
+                sizes="(max-width: 768px) 320px, 320px"
                 className="object-cover"
                 priority
               />
             </SpinOnScroll>
-            <div className="mt-4 w-72 mx-auto text-center">
+            <div className="mt-4 w-80 mx-auto text-center">
               <h4 className="text-lg font-semibold text-zinc-900">Stirred Egg</h4>
               <p className="mt-1 text-sm leading-5 text-zinc-600">
                 This might be the most common Chinese family dish. Easy to cook and comforting.
@@ -115,29 +93,30 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal delayMs={120}>
             <div className="flex flex-col items-center">
-              <SpinOnScroll className="relative mx-auto aspect-square w-72 overflow-visible" maxDegrees={8}>
+              <SpinOnScroll className="relative mx-auto aspect-square w-80 overflow-visible" maxDegrees={12}>
+                
                 <div className="relative h-full w-full overflow-hidden rounded-full">
                   <Image
                     src="/p1234.png"
                     alt="Main dish"
                     fill
-                    sizes="(max-width: 768px) 288px, 288px"
+                    sizes="(max-width: 768px) 320px, 320px"
                     className="object-cover"
                     priority
                   />
                 </div>
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                  <div className="relative h-70 w-70">
+                  <SpinOnScroll className="relative h-80 w-80" maxDegrees={20}>
                     <div className="absolute inset-0">
                       <Image src="/p222.png" alt="Chopstick" fill className="object-contain -rotate-8" />
                     </div>
                     <div className="absolute inset-0">
                       <Image src="/p222.png" alt="Chopstick" fill className="object-contain -rotate-2" />
                     </div>
-                  </div>
+                  </SpinOnScroll>
                 </div>
               </SpinOnScroll>
-              <div className="mt-4 w-72 mx-auto text-center">
+              <div className="mt-4 w-80 mx-auto text-center">
                 <h4 className="text-lg font-semibold text-zinc-900">Stirred Egg</h4>
                 <p className="mt-1 text-sm leading-5 text-zinc-600">
                   This might be the most common Chinese family dish. Easy to cook and comforting.
@@ -146,16 +125,16 @@ export default function Home() {
             </div>
           </ScrollReveal>
           <ScrollReveal delayMs={240}>
-            <SpinOnScroll className="relative mx-auto aspect-square w-72 overflow-hidden rounded-full" maxDegrees={8}>
+            <SpinOnScroll className="relative mx-auto aspect-square w-80 overflow-hidden rounded-full" maxDegrees={12}>
               <Image
-                src="/p321.png"
+                src="/q0%20(1).png"
                 alt="Dish 3"
                 fill
-                sizes="(max-width: 768px) 288px, 288px"
+                sizes="(max-width: 768px) 320px, 320px"
                 className="object-cover"
               />
             </SpinOnScroll>
-            <div className="mt-4 w-72 mx-auto text-center">
+            <div className="mt-4 w-80 mx-auto text-center">
               <h4 className="text-lg font-semibold text-zinc-900">Stirred Egg</h4>
               <p className="mt-1 text-sm leading-5 text-zinc-600">
                 This might be the most common Chinese family dish. Easy to cook and comforting.
@@ -169,7 +148,7 @@ export default function Home() {
     <section id="testimonials" className="relative w-full bg-transparent py-20">
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-[1.1fr_1fr] lg:px-12">
         <div className="relative mx-auto aspect-square w-[88%] max-w-[540px]">
-          <SpinOnScroll className="absolute inset-0" maxDegrees={16}>
+          <SpinOnScroll className="absolute inset-0" maxDegrees={22}>
             <Image
               src="/p123.webp"
               alt="Featured dish"
@@ -214,10 +193,10 @@ export default function Home() {
       </div>
       <div className="mt-12 w-full">
         <div className="relative h-24 w-full overflow-hidden rounded-3xl border-t border-zinc-100 bg-gradient-to-b from-white to-zinc-50 shadow-[0_-6px_24px_rgba(0,0,0,0.06)]">
-          <DepthOnScroll className="pointer-events-none absolute inset-y-0 left-0 w-[420px]" side="left" translatePx={28} maxScale={0.1} motion="inout">
+          <DepthOnScroll className="pointer-events-none absolute inset-y-0 left-0 w-[420px]" mode="circle" radiusPx={22} phaseDeg={0} maxScale={0.1} motion="inout">
             <Image src="/p8.jpg" alt="" fill className="object-contain object-left" priority />
           </DepthOnScroll>
-          <DepthOnScroll className="pointer-events-none absolute inset-y-0 right-0 w-[420px]" side="right" translatePx={28} maxScale={0.1}>
+          <DepthOnScroll className="pointer-events-none absolute inset-y-0 right-0 w-[420px]" mode="circle" radiusPx={22} phaseDeg={180} maxScale={0.1} motion="inout">
             <Image src="/p3.jpg" alt="" fill className="object-contain object-right" priority />
           </DepthOnScroll>
         </div>
@@ -225,16 +204,16 @@ export default function Home() {
     </section>
 
     <section id="subscribe" className="relative w-full bg-transparent py-20">
-      <DepthOnScroll className="pointer-events-none absolute left-0 top-4 h-24 w-40 md:h-32 md:w-48" side="left" translatePx={16} maxScale={0.08} motion="inout">
+      <DepthOnScroll className="pointer-events-none absolute left-0 top-4 h-24 w-40 md:h-32 md:w-48" mode="circle" radiusPx={18} phaseDeg={0} maxScale={0.08} motion="inout">
         <Image src="/p15.png" alt="" fill className="object-contain object-left" priority />
       </DepthOnScroll>
-      <DepthOnScroll className="pointer-events-none absolute right-2 top-8 h-24 w-40 md:h-32 md:w-48" side="right" translatePx={16} maxScale={0.08}>
+      <DepthOnScroll className="pointer-events-none absolute right-2 top-8 h-24 w-40 md:h-32 md:w-48" mode="circle" radiusPx={18} phaseDeg={90} maxScale={0.08} motion="inout">
         <Image src="/p4.jpg" alt="" fill className="object-contain object-right" priority />
       </DepthOnScroll>
-      <DepthOnScroll className="pointer-events-none absolute left-6 bottom-6 h-20 w-20 md:h-24 md:w-24" side="left" translatePx={10} maxScale={0.06} motion="inout">
+      <DepthOnScroll className="pointer-events-none absolute left-6 bottom-6 h-20 w-20 md:h-24 md:w-24" mode="circle" radiusPx={14} phaseDeg={180} maxScale={0.06} motion="inout">
         <Image src="/p8.jpg" alt="" fill className="object-contain" priority />
       </DepthOnScroll>
-      <DepthOnScroll className="pointer-events-none absolute right-10 bottom-8 h-16 w-24 md:h-20 md:w-32" side="right" translatePx={10} maxScale={0.06}>
+      <DepthOnScroll className="pointer-events-none absolute right-10 bottom-8 h-16 w-24 md:h-20 md:w-32" mode="circle" radiusPx={14} phaseDeg={270} maxScale={0.06} motion="inout">
         <Image src="/p3.jpg" alt="" fill className="object-contain" priority />
       </DepthOnScroll>
       <div className="mx-auto w-full max-w-4xl px-6 text-center lg:px-12">
