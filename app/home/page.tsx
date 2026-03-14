@@ -7,11 +7,11 @@ import DepthOnScroll from "../../components/DepthOnScroll";
 
 export default function Home() {
   return (
-    <div className="home-page-bg">
-    <section className="relative isolate min-h-[90vh] w-full overflow-hidden bg-transparent">
+    <div className="home-page-bg flex flex-col items-center">
+    <section className="relative isolate min-h-[90vh] w-full overflow-hidden bg-transparent flex flex-col items-center">
       
-      <div className="pointer-events-none absolute -left-40 -top-40 h-80 w-80 rounded-full bg-orange-200/50 blur-3xl" />
-      <div className="mx-auto grid min-h-[90vh] w-full max-w-7xl grid-cols-1 items-center justify-items-center gap-12 px-6 py-16 sm:py-24 md:grid-cols-2 lg:px-12">
+      <div className="pointer-events-none absolute -left-40 -top-40 h-80 w-80 rounded-full bg-orange-200/50 blur-3xl z-0" />
+      <div className="mx-auto grid min-h-[90vh] w-full max-w-7xl grid-cols-1 items-center justify-items-center gap-12 px-6 py-16 sm:py-24 md:grid-cols-2 lg:px-12 relative z-10">
         <div className="flex flex-col items-center gap-6 text-center">
           <h1 className="text-5xl font-extrabold leading-tight tracking-tight text-zinc-900 md:text-6xl">
             <span className="block">Take a taste</span>
@@ -51,15 +51,15 @@ export default function Home() {
 
     </section>
     
-    <section id="explore" className="relative w-full bg-transparent py-16 sm:py-24">
-      <DepthOnScroll className="pointer-events-none absolute left-0 top-8 md:top-6 h-28 w-40 md:h-36 md:w-56" side="left" maxScale={0.1} translatePx={28} motion="inout">
+    <section id="explore" className="relative w-full bg-transparent py-16 sm:py-24 flex flex-col items-center">
+      <DepthOnScroll className="pointer-events-none absolute left-0 top-8 md:top-6 h-28 w-40 md:h-36 md:w-56 z-0" side="left" maxScale={0.1} translatePx={28} motion="inout">
         <Image src="/p3.jpg" alt="" fill className="object-cover object-left" priority />
       </DepthOnScroll>
-      <DepthOnScroll className="pointer-events-none absolute right-0 top-8 md:top-15 h-28 w-40 md:h-36 md:w-56" side="right" maxScale={0.1} translatePx={28}>
+      <DepthOnScroll className="pointer-events-none absolute right-0 top-8 md:top-15 h-28 w-40 md:h-36 md:w-56 z-0" side="right" maxScale={0.1} translatePx={28}>
         <Image src="/p15.png" alt="" fill className="object-cover object-right" priority />
       </DepthOnScroll>
-      <div className="mx-auto w-full max-w-6xl px-6 lg:px-12">
-        <div className="text-center">
+      <div className="mx-auto w-full max-w-6xl px-6 lg:px-12 flex flex-col items-center relative z-10">
+        <div className="text-center flex flex-col items-center">
           <h3 className="text-4xl font-extrabold tracking-tight text-zinc-900">What&apos;s on our Plate</h3>
           <p className="mt-2 text-zinc-600">Please serve yourself without any hesitate</p>
           <div className="mt-6 flex items-center justify-center gap-6 text-sm font-semibold">
@@ -145,8 +145,8 @@ export default function Home() {
       </div>
     </section>
 
-    <section id="testimonials" className="relative w-full bg-transparent py-20">
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-[1.1fr_1fr] lg:px-12">
+    <section id="testimonials" className="relative w-full bg-transparent py-20 flex flex-col items-center">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-[1.1fr_1fr] lg:px-12 relative z-10">
         <div className="relative mx-auto aspect-square w-[88%] max-w-[540px]">
           <SpinOnScroll className="absolute inset-0" maxDegrees={22}>
             <Image
@@ -182,7 +182,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="pointer-events-none absolute right-8 top-2 h-28 w-48">
+      <div className="pointer-events-none absolute right-8 top-2 h-28 w-48 z-0">
         <Image
           src="/p4.jpg"
           alt="Spices garnish"
@@ -191,32 +191,32 @@ export default function Home() {
           priority
         />
       </div>
-      <div className="mt-12 w-full">
+      <div className="mt-12 w-full relative z-0">
         <div className="relative h-24 w-full overflow-hidden rounded-3xl border-t border-zinc-100 bg-gradient-to-b from-white to-zinc-50 shadow-[0_-6px_24px_rgba(0,0,0,0.06)]">
-          <DepthOnScroll className="pointer-events-none absolute inset-y-0 left-0 w-[420px]" mode="circle" radiusPx={22} phaseDeg={0} maxScale={0.1} motion="inout">
+          <DepthOnScroll className="pointer-events-none absolute inset-y-0 left-0 w-[420px] z-0" mode="circle" radiusPx={22} phaseDeg={0} maxScale={0.1} motion="inout">
             <Image src="/p8.jpg" alt="" fill className="object-contain object-left" priority />
           </DepthOnScroll>
-          <DepthOnScroll className="pointer-events-none absolute inset-y-0 right-0 w-[420px]" mode="circle" radiusPx={22} phaseDeg={180} maxScale={0.1} motion="inout">
+          <DepthOnScroll className="pointer-events-none absolute inset-y-0 right-0 w-[420px] z-0" mode="circle" radiusPx={22} phaseDeg={180} maxScale={0.1} motion="inout">
             <Image src="/p3.jpg" alt="" fill className="object-contain object-right" priority />
           </DepthOnScroll>
         </div>
       </div>
     </section>
 
-    <section id="subscribe" className="relative w-full bg-transparent py-20">
-      <DepthOnScroll className="pointer-events-none absolute left-0 top-4 h-24 w-40 md:h-32 md:w-48" mode="circle" radiusPx={18} phaseDeg={0} maxScale={0.08} motion="inout">
+    <section id="subscribe" className="relative w-full bg-transparent py-20 flex flex-col items-center">
+      <DepthOnScroll className="pointer-events-none absolute left-0 top-4 h-24 w-40 md:h-32 md:w-48 z-0" mode="circle" radiusPx={18} phaseDeg={0} maxScale={0.08} motion="inout">
         <Image src="/p15.png" alt="" fill className="object-contain object-left" priority />
       </DepthOnScroll>
-      <DepthOnScroll className="pointer-events-none absolute right-2 top-8 h-24 w-40 md:h-32 md:w-48" mode="circle" radiusPx={18} phaseDeg={90} maxScale={0.08} motion="inout">
+      <DepthOnScroll className="pointer-events-none absolute right-2 top-8 h-24 w-40 md:h-32 md:w-48 z-0" mode="circle" radiusPx={18} phaseDeg={90} maxScale={0.08} motion="inout">
         <Image src="/p4.jpg" alt="" fill className="object-contain object-right" priority />
       </DepthOnScroll>
-      <DepthOnScroll className="pointer-events-none absolute left-6 bottom-6 h-20 w-20 md:h-24 md:w-24" mode="circle" radiusPx={14} phaseDeg={180} maxScale={0.06} motion="inout">
+      <DepthOnScroll className="pointer-events-none absolute left-6 bottom-6 h-20 w-20 md:h-24 md:w-24 z-0" mode="circle" radiusPx={14} phaseDeg={180} maxScale={0.06} motion="inout">
         <Image src="/p8.jpg" alt="" fill className="object-contain" priority />
       </DepthOnScroll>
-      <DepthOnScroll className="pointer-events-none absolute right-10 bottom-8 h-16 w-24 md:h-20 md:w-32" mode="circle" radiusPx={14} phaseDeg={270} maxScale={0.06} motion="inout">
+      <DepthOnScroll className="pointer-events-none absolute right-10 bottom-8 h-16 w-24 md:h-20 md:w-32 z-0" mode="circle" radiusPx={14} phaseDeg={270} maxScale={0.06} motion="inout">
         <Image src="/p3.jpg" alt="" fill className="object-contain" priority />
       </DepthOnScroll>
-      <div className="mx-auto w-full max-w-4xl px-6 text-center lg:px-12">
+      <div className="mx-auto w-full max-w-4xl px-6 text-center lg:px-12 flex flex-col items-center relative z-10">
         <h3 className="text-4xl font-extrabold tracking-tight text-zinc-900">Easy recipes will send to your inbox</h3>
         <p className="mt-2 text-zinc-600">Get weekly updates on the newest chinese recipes in your mailbox!</p>
         <div className="mx-auto mt-8 flex max-w-xl items-center gap-2 rounded-full bg-white p-2 shadow-lg ring-1 ring-zinc-200">

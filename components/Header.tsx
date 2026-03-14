@@ -27,7 +27,7 @@ function PlayStoreIcon(props: SVGProps<SVGSVGElement>) {
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 w-full bg-white/80 backdrop-blur">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6 lg:px-12">
+      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-center md:justify-between px-6 lg:px-12">
         <Link href="/" className="text-2xl font-extrabold tracking-tight text-orange-500">
           QuickRunEats
         </Link>
